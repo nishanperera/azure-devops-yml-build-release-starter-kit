@@ -1,0 +1,27 @@
+trigger:
+  - master
+
+parameters:
+  - name: "buildconfiguration"
+    displayName: "Build configurtion"
+    type: string
+    default: release
+    values:
+      - debug
+      - release
+
+variables:
+  - template: variables/common.yml
+
+stages:
+  - stage: Build
+    jobs:
+      - job: Build
+        pool: $(poolName)
+        steps:
+          - task: DotNetCoreCLI@2
+            displayName: build
+            inputs:
+              command: build
+              projects: '**/*.sln'
+              configuration: releae

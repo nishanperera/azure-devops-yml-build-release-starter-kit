@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "**/ci/*.yml": "azure-pipelines",
+        "**/ci/**/*.yml": "azure-pipelines"
+    },
+    "[azure-pipelines].customSchemaFile": "C:/Sotron/yaml-sample/schema/my-schema.json"
+}
